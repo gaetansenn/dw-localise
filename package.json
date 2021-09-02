@@ -1,6 +1,6 @@
 {
   "name": "@dewib/dw-localise",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A localise module to synth locale with NuxtJS",
   "main": "index.js",
   "scripts": {
