@@ -1,0 +1,25 @@
+{
+  "name": "dw-localise",
+  "version": "1.0.0",
+  "description": "A localise module to synth locale with NuxtJS",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version && git push --follow-tags && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaetansenn/dw-localise.git"
+  },
+  "keywords": [
+    "nuxtjs",
+    "localise",
+    "i18n",
+    "module"
+  ],
+  "author": "contact@dewib.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaetansenn/dw-localise/issues"
+  },
+  "homepage": "https://github.com/gaetansenn/dw-localise#readme"
+}
