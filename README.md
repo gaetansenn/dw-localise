@@ -31,7 +31,7 @@ Localise module handle four parameters.
 
 `filter`: used to filter with tags [see more](https://localise.biz/api/docs/export/exportall#query)<br/>
 `fallback`: fallback locale for untranslated assets, specified as short code. e.g. en or en_GB [see more](https://localise.biz/api/docs/export/exportall#query)<br/>
-`locale`: used to handle case you have only one locale and due to lack of informations from localise.
+`locale`: used to handle case you have only one locale and due to lack of informations from localise.<br/>
 `token`: the localise token to export the locales<br/>
 `path`: where the locales will be writen<br/>
 `disabled`: in case you don't need to sync it from localise server<br/>
