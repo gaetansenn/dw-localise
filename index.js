@@ -28,7 +28,7 @@ module.exports = async function (moduleOptions) {
       }
     }, (res) => {
       let data = ''
-z
+
       res.on('data', (chunk) => {
         data += chunk
       })
