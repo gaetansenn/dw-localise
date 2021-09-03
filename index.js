@@ -8,18 +8,27 @@ module.exports = async function (moduleOptions) {
   const { localise = {} } = Object.assign({}, this.options)
   Object.assign(localise, moduleOptions)
 
-  const response = await new Promise((resolve, reject) => {
+  const parameters = {}
+
+  if (localise.fallback) parameters.fallback = localise.fallback
+  if (localise.filter) parameters.filter = localise.filter
+
+  let path = '/api/export/all.json'
+
+  if (Object.keys(parameters).length) path = `${path}?${(new URLSearchParams(parameters)).toString()}`
+
+  let response = await new Promise((resolve, reject) => {
     https.get({
       protocol: 'https:',
       hostname: 'localise.biz',
-      path: `/api/export/all.json?filter=${localise.filter}&fallback=en`,
+      path,
       method: 'GET',
       headers: {
         Authorization: `Loco ${localise.token}`
       }
     }, (res) => {
       let data = ''
-
+z
       res.on('data', (chunk) => {
         data += chunk
       })
@@ -29,6 +38,12 @@ module.exports = async function (moduleOptions) {
       })
     }).on('error', reject)
   })
+
+  if (localise.locale) {
+    response = {
+      fr: response
+    }
+  }
 
   await Promise.all(Object.keys(response).map(async (locale) => {
     logger.info(`${prefix} sync ${locale} locale`)
