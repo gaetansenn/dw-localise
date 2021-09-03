@@ -41,7 +41,7 @@ module.exports = async function (moduleOptions) {
 
   if (localise.locale) {
     response = {
-      fr: response
+      [`${localise.locale}`]: response
     }
   }
 
