@@ -5,6 +5,8 @@ const https = require('https')
 const logger = require('consola').withTag(prefix)
 
 module.exports = async function (moduleOptions) {
+  if (!this.options._build) return
+
   const { localise = {} } = Object.assign({}, this.options)
   Object.assign(localise, moduleOptions)
 
